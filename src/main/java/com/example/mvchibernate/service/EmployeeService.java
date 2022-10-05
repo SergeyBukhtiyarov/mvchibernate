@@ -16,5 +16,9 @@ public class EmployeeService {
         return employeeList;
     }
 
+    public void saveEmployee(Employee employee){
+        employeeRepository.save(employee);
+    }
+
 
 }
