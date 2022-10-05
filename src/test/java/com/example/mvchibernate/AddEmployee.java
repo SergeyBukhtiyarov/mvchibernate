@@ -1,7 +1,8 @@
 package com.example.mvchibernate;
 
+import com.example.mvchibernate.dao.EmployeeRepository;
 import com.example.mvchibernate.entity.Employee;
-import com.example.mvchibernate.repository.EmployeeRepository;
+import com.example.mvchibernate.service.EmployeeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class AddEmployee {
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    EmployeeService employeeService;
 @Test
     public void addEmployee ()
     {
@@ -31,10 +35,17 @@ public class AddEmployee {
         employee3.setSalary(5000);
         employee3.setDepartment("HR");
 
+        Employee employee4 = new Employee();
+        employee4.setName("Igor");
+        employee4.setSurname("Smirnov");
+        employee4.setSalary(3000);
+        employee4.setDepartment("IT");
+
 
         employeeRepository.save(employee1);
         employeeRepository.save(employee2);
         employeeRepository.save(employee3);
+        employeeRepository.save(employee4);
     }
 
 }

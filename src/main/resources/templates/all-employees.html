@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1> Employee card</h1>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>Surname</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
+
+        <tr th:each="el : ${allEmps}">
+            <td th:text="${el.id}"></td>
+            <td th:text="${el.name}"></td>
+            <td th:text="${el.surname}"></td>
+            <td th:text="${el.department}"></td>
+            <td th:text="${el.salary}"></td>
+        </tr>
+    </table>
+
+    </tr>
+
+</div>
