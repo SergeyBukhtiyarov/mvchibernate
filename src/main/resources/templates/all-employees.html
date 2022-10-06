@@ -6,7 +6,7 @@
 <body>
 
 <div class="container mt-5">
-    <h1> Employee card</h1>
+    <h1> All employees</h1>
 
     <table>
         <tr>
@@ -15,6 +15,7 @@
             <th>Surname</th>
             <th>Department</th>
             <th>Salary</th>
+            <th>Operations</th>
         </tr>
 
         <tr th:each="el : ${allEmps}">
@@ -23,11 +24,14 @@
             <td th:text="${el.surname}"></td>
             <td th:text="${el.department}"></td>
             <td th:text="${el.salary}"></td>
+
+
+            </td>
         </tr>
     </table>
     <br>
     <input type="button" value="Add new Employee"
-    onclick="window.location.href='addNewEmployee'">
+           onclick="window.location.href='addNewEmployee'">
 
     </tr>
 
