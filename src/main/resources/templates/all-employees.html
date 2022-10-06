@@ -24,15 +24,12 @@
             <td th:text="${el.surname}"></td>
             <td th:text="${el.department}"></td>
             <td th:text="${el.salary}"></td>
-            <td th:action="@{/}" method="update">
-                <input type="submit" class="Buttons" value="update"
-                       onclick="window.location.href='addNewEmployee'">
-            </td>
+          <td>
+              <a th:href="@{/updateEmployee/{id}(id=${el.id})}">
+                  <input type="button" value="update">
 
-
-
-
-            </td>
+              </a>
+          </td>
 
         </tr>
 
